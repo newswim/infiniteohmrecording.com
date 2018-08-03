@@ -1,0 +1,19 @@
+{
+  "name": "infinit_ohm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/newswim/infiniteohmrecording.com.git"
+  },
+  "author": "Dan Minshew",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/newswim/infiniteohmrecording.com/issues"
+  },
+  "homepage": "https://github.com/newswim/infiniteohmrecording.com#readme"
+}
