@@ -6,226 +6,125 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>infinite Ω</title>
   <style>
-    html, body {
-      background: #333;
-      margin: 0;
-      height: 100%;
-      overflow: hidden;
+    body {
+      background: #000;
+      color: #fff;
+      text-align: center;
+      font-family: "Georgia";
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient(to bottom, #000, #000 50%, #222 50%, #222);
+      background-size: 100% 4px;
+      -webkit-animation: gradientMove 200ms ease infinite;
+              animation: gradientMove 200ms ease infinite;
     }
-    
-    #textFill {
-      -webkit-animation: alphaRandom 1s linear infinite;
-              animation: alphaRandom 1s linear infinite;
+
+    h1 {
+      font-size: 4em;
+      text-shadow: 3px 2px 2px #fb0c0c, 0px -1px 3px rgba(12, 79, 251, 0.5), -3px 0px 2px #34fb0c;
+      -webkit-animation: chromaticMove 4500ms ease infinite,pulse ease 200ms  infinite;
+              animation: chromaticMove 4500ms ease infinite,pulse ease 200ms  infinite;
     }
-    
-    #textGlow {
-      -webkit-animation: alphaRandom2 1s linear infinite;
-              animation: alphaRandom2 1s linear infinite;
+
+    small {
+      display: block;
+      text-transform: initial;
+      font-size: 24px;
     }
-    
-    @-webkit-keyframes alphaRandom {
+
+    @-webkit-keyframes gradientMove {
       0% {
-        opacity: 0.7988253495;
-      }
-      10% {
-        opacity: 0.9949680817;
-      }
-      20% {
-        opacity: 0.9158887322;
-      }
-      30% {
-        opacity: 0.9872122815;
-      }
-      40% {
-        opacity: 0.9152670478;
+        background-size: 100% 4px;
       }
       50% {
-        opacity: 0.9602457859;
-      }
-      60% {
-        opacity: 0.8608186986;
-      }
-      70% {
-        opacity: 0.7644989483;
-      }
-      80% {
-        opacity: 0.8142076723;
-      }
-      90% {
-        opacity: 0.7444292322;
+        background-size: 100% 2px;
       }
       100% {
-        opacity: 0.8942498488;
+        background-size: 100% 4px;
       }
     }
-    
-    @keyframes alphaRandom {
+
+    @keyframes gradientMove {
       0% {
-        opacity: 0.7988253495;
-      }
-      10% {
-        opacity: 0.9949680817;
-      }
-      20% {
-        opacity: 0.9158887322;
-      }
-      30% {
-        opacity: 0.9872122815;
-      }
-      40% {
-        opacity: 0.9152670478;
+        background-size: 100% 4px;
       }
       50% {
-        opacity: 0.9602457859;
-      }
-      60% {
-        opacity: 0.8608186986;
-      }
-      70% {
-        opacity: 0.7644989483;
-      }
-      80% {
-        opacity: 0.8142076723;
-      }
-      90% {
-        opacity: 0.7444292322;
+        background-size: 100% 2px;
       }
       100% {
-        opacity: 0.8942498488;
+        background-size: 100% 4px;
       }
     }
-    @-webkit-keyframes alphaRandom2 {
+    @-webkit-keyframes pulse {
       0% {
-        opacity: 0.8336909384;
+        opacity: .9;
+        -webkit-transform: skewX(0.5deg);
+                transform: skewX(0.5deg);
       }
-      10% {
-        opacity: 0.8954989048;
-      }
-      20% {
-        opacity: 0.9846038401;
-      }
-      30% {
-        opacity: 0.9534169964;
-      }
-      40% {
-        opacity: 0.9631575525;
+      25% {
+        opacity: 1;
       }
       50% {
-        opacity: 0.7382957804;
+        opacity: .9;
       }
-      60% {
-        opacity: 0.8345529358;
-      }
-      70% {
-        opacity: 0.7812502926;
-      }
-      80% {
-        opacity: 0.9561935354;
-      }
-      90% {
-        opacity: 0.8460444514;
+      75% {
+        opacity: 1;
+        -webkit-transform: skewX(0.5deg);
+                transform: skewX(0.5deg);
       }
       100% {
-        opacity: 0.8507555978;
+        opacity: .9;
       }
     }
-    @keyframes alphaRandom2 {
+    @keyframes pulse {
       0% {
-        opacity: 0.8336909384;
+        opacity: .9;
+        -webkit-transform: skewX(0.5deg);
+                transform: skewX(0.5deg);
       }
-      10% {
-        opacity: 0.8954989048;
-      }
-      20% {
-        opacity: 0.9846038401;
-      }
-      30% {
-        opacity: 0.9534169964;
-      }
-      40% {
-        opacity: 0.9631575525;
+      25% {
+        opacity: 1;
       }
       50% {
-        opacity: 0.7382957804;
+        opacity: .9;
       }
-      60% {
-        opacity: 0.8345529358;
-      }
-      70% {
-        opacity: 0.7812502926;
-      }
-      80% {
-        opacity: 0.9561935354;
-      }
-      90% {
-        opacity: 0.8460444514;
+      75% {
+        opacity: 1;
+        -webkit-transform: skewX(0.5deg);
+                transform: skewX(0.5deg);
       }
       100% {
-        opacity: 0.8507555978;
+        opacity: .9;
       }
     }
+    @-webkit-keyframes chromaticMove {
+      0% {
+        text-shadow: 3px 2px 2px #fb0c0c, 0px -1px 3px rgba(12, 79, 251, 0.5), 0px 0px -2px #34fb0c;
+      }
+      50% {
+        text-shadow: 3px 2px 2px #fb0c0c, 0px -1px 3px rgba(12, 79, 251, 0.5), -3px 2px 3px #34fb0c;
+      }
+      100% {
+        text-shadow: 3px 2px 2px #fb0c0c, 0px -1px 3px rgba(12, 79, 251, 0.5), 2px -1px 2px #34fb0c;
+      }
+    }
+    @keyframes chromaticMove {
+      0% {
+        text-shadow: 3px 2px 2px #fb0c0c, 0px -1px 3px rgba(12, 79, 251, 0.5), 0px 0px -2px #34fb0c;
+      }
+      50% {
+        text-shadow: 3px 2px 2px #fb0c0c, 0px -1px 3px rgba(12, 79, 251, 0.5), -3px 2px 3px #34fb0c;
+      }
+      100% {
+        text-shadow: 3px 2px 2px #fb0c0c, 0px -1px 3px rgba(12, 79, 251, 0.5), 2px -1px 2px #34fb0c;
+      }
+    }
+
     </style>
 </head>
 <body>
-  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%">
-		<defs>
-			<text id="text" x="50%" y="50%" font-family="Georgia" font-size="120px" font-weight="800" text-anchor="middle" alignment-baseline="middle">
-				Infinite Ohm Ω
-			</text>
-		</defs>
-		<filter id="glow">
-		    <feGaussianBlur id="glowBlur" stdDeviation="3.5" result="coloredBlur"/>
-		    <feMerge>
-		        <feMergeNode in="coloredBlur"/>
-		        <feMergeNode in="SourceGraphic"/>
-		    </feMerge>
-		</filter>
-		<filter id="shock">
-			<feTurbulence type="fractalNoise" baseFrequency="0.2" numOctaves="1" seed="2" result="noise" id="noise">
-  <animate attributeType="XML" attributeName="seed" from="2" to="120" dur="12s" repeatCount="indefinite"/>
-</feTurbulence>
-			<feMorphology id="morph1" in="SourceGraphic" operator="dilate" radius="10" result="morph1" />
-			<feMorphology id="morph2" in="morph1" operator="dilate" radius="2" result="morph2" />
-			<feComposite operator="out" in="morph2" in2="morph1" result="strokeText"/>
-			<feDisplacementMap 
-                         xChannelSelector="R" 
-                         yChannelSelector="G" 
-                         in="strokeText" 
-                         in2="noise"
-                         result="displacementMap"
-                         color-interpolation-filters="sRGB"
-                         scale="10" />
-            <feGaussianBlur stdDeviation="5" result="coloredBlur"/>
-		    <feMerge>
-		        <feMergeNode in="coloredBlur"/>
-		        <feMergeNode in="displacementMap"/>
-		    </feMerge>
-		</filter>
-  <filter id="shock2">
-			<feTurbulence type="fractalNoise" baseFrequency="0.2" numOctaves="1" seed="2" result="noise" id="noise">
-  <animate attributeType="XML" attributeName="seed" from="2" to="120" dur="10s" repeatCount="indefinite"/>
-</feTurbulence>
-			<feMorphology id="morph3" in="SourceGraphic" operator="dilate" radius="1" result="morph1" />
-			<feMorphology id="morph4" in="morph1" operator="dilate" radius="1" result="morph2" />
-			<feComposite operator="out" in="morph2" in2="morph1" result="strokeText"/>
-			<feDisplacementMap 
-                         xChannelSelector="R" 
-                         yChannelSelector="G" 
-                         in="strokeText" 
-                         in2="noise"
-                         result="displacementMap"
-                         color-interpolation-filters="sRGB"
-                         scale="10" />
-            <feGaussianBlur stdDeviation="5" result="coloredBlur"/>
-		    <feMerge>
-		        <feMergeNode in="coloredBlur"/>
-		        <feMergeNode in="displacementMap"/>
-		    </feMerge>
-		</filter>
-    <use xlink:href="#text" id="textShock" x="2" y="2" filter="url(#shock)" stroke="0" stroke-width="1" fill="#ccc"/>
-  <use xlink:href="#text" id="textShock" x="2" y="2" filter="url(#shock2)" stroke="0" stroke-width="1" fill="#f90"/>
-    <use xlink:href="#text" id="textFill" x="0" y="0" fill="white" />
-    <use xlink:href="#text" id="textGlow" x="0" y="0" filter="url(#glow)" stroke="#f90" stroke-width="0.1" fill="transparent"/>
-	</svg>
+  <h1>Infinite Ωhm<small> coming soooon..</small></h1>
 </body>
 </html>
