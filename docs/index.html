@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>infinite Ω</title>
+  <style>
+    html, body {
+      background: #333;
+      margin: 0;
+      height: 100%;
+      overflow: hidden;
+    }
+    
+    #textFill {
+      -webkit-animation: alphaRandom 1s linear infinite;
+              animation: alphaRandom 1s linear infinite;
+    }
+    
+    #textGlow {
+      -webkit-animation: alphaRandom2 1s linear infinite;
+              animation: alphaRandom2 1s linear infinite;
+    }
+    
+    @-webkit-keyframes alphaRandom {
+      0% {
+        opacity: 0.7988253495;
+      }
+      10% {
+        opacity: 0.9949680817;
+      }
+      20% {
+        opacity: 0.9158887322;
+      }
+      30% {
+        opacity: 0.9872122815;
+      }
+      40% {
+        opacity: 0.9152670478;
+      }
+      50% {
+        opacity: 0.9602457859;
+      }
+      60% {
+        opacity: 0.8608186986;
+      }
+      70% {
+        opacity: 0.7644989483;
+      }
+      80% {
+        opacity: 0.8142076723;
+      }
+      90% {
+        opacity: 0.7444292322;
+      }
+      100% {
+        opacity: 0.8942498488;
+      }
+    }
+    
+    @keyframes alphaRandom {
+      0% {
+        opacity: 0.7988253495;
+      }
+      10% {
+        opacity: 0.9949680817;
+      }
+      20% {
+        opacity: 0.9158887322;
+      }
+      30% {
+        opacity: 0.9872122815;
+      }
+      40% {
+        opacity: 0.9152670478;
+      }
+      50% {
+        opacity: 0.9602457859;
+      }
+      60% {
+        opacity: 0.8608186986;
+      }
+      70% {
+        opacity: 0.7644989483;
+      }
+      80% {
+        opacity: 0.8142076723;
+      }
+      90% {
+        opacity: 0.7444292322;
+      }
+      100% {
+        opacity: 0.8942498488;
+      }
+    }
+    @-webkit-keyframes alphaRandom2 {
+      0% {
+        opacity: 0.8336909384;
+      }
+      10% {
+        opacity: 0.8954989048;
+      }
+      20% {
+        opacity: 0.9846038401;
+      }
+      30% {
+        opacity: 0.9534169964;
+      }
+      40% {
+        opacity: 0.9631575525;
+      }
+      50% {
+        opacity: 0.7382957804;
+      }
+      60% {
+        opacity: 0.8345529358;
+      }
+      70% {
+        opacity: 0.7812502926;
+      }
+      80% {
+        opacity: 0.9561935354;
+      }
+      90% {
+        opacity: 0.8460444514;
+      }
+      100% {
+        opacity: 0.8507555978;
+      }
+    }
+    @keyframes alphaRandom2 {
+      0% {
+        opacity: 0.8336909384;
+      }
+      10% {
+        opacity: 0.8954989048;
+      }
+      20% {
+        opacity: 0.9846038401;
+      }
+      30% {
+        opacity: 0.9534169964;
+      }
+      40% {
+        opacity: 0.9631575525;
+      }
+      50% {
+        opacity: 0.7382957804;
+      }
+      60% {
+        opacity: 0.8345529358;
+      }
+      70% {
+        opacity: 0.7812502926;
+      }
+      80% {
+        opacity: 0.9561935354;
+      }
+      90% {
+        opacity: 0.8460444514;
+      }
+      100% {
+        opacity: 0.8507555978;
+      }
+    }
+    </style>
+</head>
+<body>
+  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%">
+		<defs>
+			<text id="text" x="50%" y="50%" font-family="Georgia" font-size="120px" font-weight="800" text-anchor="middle" alignment-baseline="middle">
+				Infinite Ohm Ω
+			</text>
+		</defs>
+		<filter id="glow">
+		    <feGaussianBlur id="glowBlur" stdDeviation="3.5" result="coloredBlur"/>
+		    <feMerge>
+		        <feMergeNode in="coloredBlur"/>
+		        <feMergeNode in="SourceGraphic"/>
+		    </feMerge>
+		</filter>
+		<filter id="shock">
+			<feTurbulence type="fractalNoise" baseFrequency="0.2" numOctaves="1" seed="2" result="noise" id="noise">
+  <animate attributeType="XML" attributeName="seed" from="2" to="120" dur="12s" repeatCount="indefinite"/>
+</feTurbulence>
+			<feMorphology id="morph1" in="SourceGraphic" operator="dilate" radius="10" result="morph1" />
+			<feMorphology id="morph2" in="morph1" operator="dilate" radius="2" result="morph2" />
+			<feComposite operator="out" in="morph2" in2="morph1" result="strokeText"/>
+			<feDisplacementMap 
+                         xChannelSelector="R" 
+                         yChannelSelector="G" 
+                         in="strokeText" 
+                         in2="noise"
+                         result="displacementMap"
+                         color-interpolation-filters="sRGB"
+                         scale="10" />
+            <feGaussianBlur stdDeviation="5" result="coloredBlur"/>
+		    <feMerge>
+		        <feMergeNode in="coloredBlur"/>
+		        <feMergeNode in="displacementMap"/>
+		    </feMerge>
+		</filter>
+  <filter id="shock2">
+			<feTurbulence type="fractalNoise" baseFrequency="0.2" numOctaves="1" seed="2" result="noise" id="noise">
+  <animate attributeType="XML" attributeName="seed" from="2" to="120" dur="10s" repeatCount="indefinite"/>
+</feTurbulence>
+			<feMorphology id="morph3" in="SourceGraphic" operator="dilate" radius="1" result="morph1" />
+			<feMorphology id="morph4" in="morph1" operator="dilate" radius="1" result="morph2" />
+			<feComposite operator="out" in="morph2" in2="morph1" result="strokeText"/>
+			<feDisplacementMap 
+                         xChannelSelector="R" 
+                         yChannelSelector="G" 
+                         in="strokeText" 
+                         in2="noise"
+                         result="displacementMap"
+                         color-interpolation-filters="sRGB"
+                         scale="10" />
+            <feGaussianBlur stdDeviation="5" result="coloredBlur"/>
+		    <feMerge>
+		        <feMergeNode in="coloredBlur"/>
+		        <feMergeNode in="displacementMap"/>
+		    </feMerge>
+		</filter>
+    <use xlink:href="#text" id="textShock" x="2" y="2" filter="url(#shock)" stroke="0" stroke-width="1" fill="#ccc"/>
+  <use xlink:href="#text" id="textShock" x="2" y="2" filter="url(#shock2)" stroke="0" stroke-width="1" fill="#f90"/>
+    <use xlink:href="#text" id="textFill" x="0" y="0" fill="white" />
+    <use xlink:href="#text" id="textGlow" x="0" y="0" filter="url(#glow)" stroke="#f90" stroke-width="0.1" fill="transparent"/>
+	</svg>
+</body>
+</html>

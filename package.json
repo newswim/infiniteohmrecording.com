@@ -4,7 +4,7 @@
   "description": "A website for Infinite Ohm Recording",
   "main": "index.js",
   "scripts": {
-    "style:build": "tailwind build styles.css"
+    "style:build": "tailwind build tailwind.css -o styles.css"
   },
   "repository": {
     "type": "git",

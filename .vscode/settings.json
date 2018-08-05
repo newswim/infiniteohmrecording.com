@@ -1,0 +1,8 @@
+{
+  "files.associations": {
+    "*.css": "scss"
+  },
+  "css.lint.unknownAtRules": "ignore",
+  "css.trace.server": "messages",
+  "scss.validate": false
+}
