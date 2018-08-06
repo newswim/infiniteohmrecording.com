@@ -4,7 +4,7 @@
   "description": "A website for Infinite Ohm Recording",
   "main": "index.js",
   "scripts": {
-    "style:build": "tailwind build tailwind.css -o styles.css"
+    "style:build": "tailwind build css/tailwind.css -o css/styles.css"
   },
   "repository": {
     "type": "git",
@@ -24,7 +24,9 @@
   },
   "homepage": "https://github.com/newswim/infiniteohmrecording.com#readme",
   "devDependencies": {
-    "tailwindcss": "^0.6.4"
+    "tailwind": "^2.2.0",
+    "tailwindcss": "^0.6.4",
+    "cssnano": "^4.0.1"
   },
   "dependencies": {
     "autoprefixer": "^9.1.0",
