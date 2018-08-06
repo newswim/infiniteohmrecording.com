@@ -949,4 +949,10 @@ module.exports = {
     separator: ':',
   },
 
+  // Becade Adam W. used it in this video... https://www.youtube.com/watch?v=_JhTaENzfZQ
+  experiments: {
+    shadowLookup: true,
+    pluginVariants: true
+  }
+
 }
